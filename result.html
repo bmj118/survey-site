@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>결과</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .bar {
+      height: 20px;
+      background: #ddd;
+      margin: 10px 0;
+      position: relative;
+    }
+    .fill {
+      height: 100%;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+<h1>당신의 MBTI</h1>
+<h2 id="mbti"></h2>
+
+<div id="bars"></div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const scores = {
+  E:+params.get("E"), I:+params.get("I"),
+  N:+params.get("N"), S:+params.get("S"),
+  T:+params.get("T"), F:+params.get("F"),
+  P:+params.get("P"), J:+params.get("J")
+};
+
+document.getElementById("mbti").textContent = params.get("mbti");
+
+function bar(left, right) {
+  const total = scores[left] + scores[right] || 1;
+  const percent = Math.round(scores[left] / total * 100);
+  return `
+    <p>${left} ${percent}% ↔ ${right} ${100-percent}%</p>
+    <div class="bar"><div class="fill" style="width:${percent}%"></div></div>
+  `;
+}
+
+document.getElementById("bars").innerHTML =
+  bar("E","I") + bar("N","S") + bar("T","F") + bar("P","J");
+</script>
+
+</body>
+</html>
