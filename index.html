@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111827"><title>112통신대대 자유게시판</title><link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head>
+<body>
+<header><a class="brand" href="#"><b>112</b><span>통신대대 자유게시판<small>COMMUNITY BOARD</small></span></a><span class="status">OPEN BOARD</span></header>
+<main>
+<section class="hero"><div class="eyebrow">112 COMMUNICATION BATTALION</div><h1>자유롭게 쓰고,<br><em>편하게 이야기하자.</em></h1><p>부대 구성원들이 자유롭게 이야기를 나누는 게시판입니다.</p><a class="write-link" href="#write">글 작성하기 <span>↗</span></a></section>
+<section class="board" id="board"><div class="heading"><div><div class="eyebrow">COMMUNITY</div><h2>자유게시판</h2></div><span id="postCount">게시글 —</span></div>
+<div class="tools"><input id="search" placeholder="게시글 검색"><button id="refresh">새로고침</button></div><div id="posts"><div class="empty">게시글을 불러오는 중입니다.</div></div>
+</section>
+<section id="write" class="write"><div class="eyebrow">NEW POST</div><h2>게시글 작성</h2><form id="postForm">
+<label>닉네임 <input name="nickname" maxlength="20" placeholder="익명" value="익명"></label>
+<label>제목 <input name="title" maxlength="100" required placeholder="제목을 입력하세요"></label>
+<label>내용 <textarea name="body" rows="8" maxlength="10000" required placeholder="자유롭게 작성하세요."></textarea></label>
+<label class="agree"><input type="checkbox" required> 개인정보, 군사기밀 및 보안상 민감한 내용을 작성하지 않겠습니다.</label>
+<button class="submit" type="submit">게시글 등록하기 <span>→</span></button><p id="message" role="status"></p>
+</form></section>
+<aside><b>게시판 이용 안내</b><p>실명·연락처 등 개인정보, 군사기밀, 작전·경계·통신망 구성 등 보안상 민감한 내용은 게시하지 마세요. 타인 비방, 허위 사실, 불법 콘텐츠는 삭제될 수 있습니다. 이 게시판은 비공식 커뮤니티입니다.</p></aside>
+</main><footer>112통신대대 자유게시판 <small>Unofficial community space</small></footer><script src="app.js"></script></body></html>
